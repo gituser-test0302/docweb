@@ -1,0 +1,113 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #999;
+  --ifm-color-primary: #1E90FF;
+  --ifm-color-primary-dark: #FF0000;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* Breadcrumb active link custom color in dark mode */
+/* [data-theme='dark'] .breadcrumbs__item--active .breadcrumbs__link  {
+  color: blue !important; /* Replace 'blue' with your desired color 
+}
+
+/* Optional: Add hover effect for active breadcrumb link in dark mode */
+/* [data-theme='dark'] .breadcrumb .breadcrumb__item--active:hover .breadcrumbs__link {
+  color: lightblue !important; /* Replace 'lightblue' with your desired hover color 
+}  */
+
+ 
+ 
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #FF0000;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0; 
+  --ifm-color-primary-lighter: #1E90FF;
+  --ifm-color-primary-lighter: #32d8b4;
+  /* --ifm-link-color: #0000FF; */
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+/* For the light theme */
+/* footer {
+  background-color: #FF0000 !important;
+} */
+
+/* For the dark theme */
+[data-theme='dark'] footer {
+  background-color: #000000 !important;
+}
+
+/* Adjust the size of H1 headers */
+h1 {
+  font-size: 2.5em !important; /* Adjust the size as needed */
+}
+
+/* Adjust the size of sidebar labels */
+
+body {
+  font-family: 'DINPro', sans-serif;
+}
+
+/* Change sidebar link color to blue when active */
+[data-theme='light'] .menu__link--active {
+  color: blue !important;
+}
+
+
+/* [data-theme='dark'] .toc-item a.active {
+  color: blue !important;
+} */
+
+/* Navbar link hover in dark mode */
+/* [data-theme='dark'] .navbar__item a:hover {
+  color: blue !important;
+} */
+
+ [data-theme='light'] .navbar__item a:hover,
+[data-theme='light'] .navbar__link:hover,
+[data-theme='light'] .navbar__brand:hover,
+[data-theme='light'] .navbar__link--active
+ {
+  color: blue !important;
+}
+
+/* Optional: Force color for active and focus states as well */
+/* [data-theme='dark'] .navbar__link--active,
+[data-theme='dark'] .navbar__link:focus,
+[data-theme='dark'] .contents__link:hover code, .table-of-contents__link--active {
+  color: blue !important;
+}  */
+
+
+
+/* [data-theme='light'] a:hover {
+  color: blue !important;  Replace 'orange' with your desired hover color 
+} */
+
+
+/* Decrease font size for sidebar labels (categories like 'CCOE-doc') */
+.theme-doc-sidebar-item-category {
+  font-size: 0.9rem; /* Adjust to your desired size, e.g., 0.8rem or 14px */
+  font-weight: normal; /* Optional: Adjust font weight */
+}
+
+/* Decrease font size for sidebar items (links like 'Finops') */
+.theme-doc-sidebar-item-link {
+  font-size: 0.85rem; /* Adjust to your desired size */
+}
