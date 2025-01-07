@@ -5,15 +5,17 @@
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import {themes as prismThemes} from 'prism-react-renderer';
+// const typesenseSearchPlugin = require('docusaurus-typesense-search-plugin');
+
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  title: 'Cloud Azure Platform',
+  tagline: 'Innovative',
+  favicon: 'img/cloud.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'http://192.168.0.216:3000',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -23,7 +25,7 @@ const config = {
   organizationName: 'facebook', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -33,6 +35,7 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+  // themes: ['docusaurus-theme-search-typesense'],
 
   presets: [
     [
@@ -46,13 +49,6 @@ const config = {
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -60,25 +56,75 @@ const config = {
     ],
   ],
 
+  themes: [
+    [
+      '@easyops-cn/docusaurus-search-local',
+      {
+        hashed: true,  // Enable hashed filenames for better cache management
+        language: ["en"],  // Specify the language(s) for indexing
+        indexDocs: true,  // Set to true to index documents
+        indexPages: true,  // Set to true to index standalone pages
+        highlightSearchTermsOnTargetPage: true, // Highlight search terms on the target page
+        explicitSearchResultPath: true,  // Adds a search result path
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+  // algolia: {
+  //   apiKey: '4d2da821daad24ec4d0fb575e6502525',
+  //   indexName: 'AlgoliaSearch',
+  //   contextualSearch: true,
+  //   placeholder: 'Search any WIKI info',
+  //   appId: 'HQJKR62WLA',
+  // },
+  // typesense: {
+  //   typesenseCollectionName: 'docusaurus_WIKI',
+
+  //   typesenseServerConfig: {
+  //     nodes: [
+  //       {
+  //        host: 'localhost',
+  //        port: '8108',
+  //        protocol: 'http',
+  //       },
+  //     ],
+  //     apiKey: 'e3xLYuTOuBx0nkL34Q13m93arvHXrNH1E4z1jeZZiM2msXtH',
+  //   },
+  //   typesenseSearchParameters: {},
+
+  //     // Customize according to your needs
+  //   contextualSearch: true,
+  //   searchPagePath: 'search'
+  // },
+
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: 'B Cloud',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'Cloud Logo',
+          src: 'img/cloud.svg',
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            to: 'docs/Introduction/Intro',
+            // sidebarId: 'introSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Home',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            type: 'search',
+            position: 'right'
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'ccoeSidebar',
+            position: 'left',
+            label: 'CCOE Platform',
+          },
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
@@ -86,6 +132,10 @@ const config = {
           },
         ],
       },
+      // search: {
+      //   // Enable the built-in search bar
+      //   search: true,
+      // },
       footer: {
         style: 'dark',
         links: [
@@ -93,8 +143,8 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Home',
+                to: 'docs/Introduction/Intro',
               },
             ],
           },
@@ -118,10 +168,6 @@ const config = {
           {
             title: 'More',
             items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
               {
                 label: 'GitHub',
                 href: 'https://github.com/facebook/docusaurus',
